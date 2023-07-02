@@ -30,42 +30,42 @@ function App() {
 
 
   return (
+    
+      <Container>
+        <h1 className="title">TODO LIST</h1>
+        <Spacer />
 
-    <Container>
-      <h1 className="title">TODO LIST</h1>
-      <Spacer />
+        <Flex direction="row">
+          <Input
+            value={task}
+            placeholder="Digite sua tarefa"
+            onChange={(e) => setTask(e.target.value)}
+          />
+          <Button onClick={addTask}>Adicionar</Button>
+        </Flex>
+        <Spacer margin="16px" />
 
-      <Flex direction="row">
-        <Input
-          value={task}
-          placeholder="Digite sua tarefa"
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <Button onClick={addTask}>Adicionar</Button>
-      </Flex>
-      <Spacer margin="16px" />
-
-      <ul>
-        {listTask.map((task) => (
-          <>
-            <Item Item checked={task.checked} key={task.id}>
-              <p>{task.task}</p>
-              <Flex direction="row">
-                <button onClick={() => toggleChecked(task.id, task.checked)}>
-                  <i class="bx bx-check "></i>
-                </button>
-                <button onClick={() => removeTask(task.id)}>
-                  <i class="bx bx-trash "></i>
-                </button>
-              </Flex>
-            </Item>
-            <Spacer margin="12px" />
-          </>
-        ))}
-      </ul>
-    </Container>
-   
-  );
+        <ul>
+          {listTask.map((task) => (
+            <>
+              <Item Item checked={task.checked} key={task.id}>
+                <p>{task.task}</p>
+                <Flex direction="row">
+                  <button onClick={() => toggleChecked(task.id, task.checked)}>
+                    <i class="bx bx-check "></i>
+                  </button>
+                  <button onClick={() => removeTask(task.id)}>
+                    <i class="bx bx-trash "></i>
+                  </button>
+                </Flex>
+              </Item>
+              <Spacer margin="12px" />
+            </>
+          ))}
+        </ul>
+      </Container> 
+        
+  )
 }
 
 export default App;

@@ -12,7 +12,6 @@ export default createGlobalStyle`
 
 }
 `
-
 export const Container = styled.div`
 width: 100%;
 min-height: 895px;
@@ -106,7 +105,7 @@ export const Item = styled.li`
 padding: 13px 10px 13px 24px;
 width: auto;
 height: auto;
-background: ${(props) => props.checked ? '#4169E1' : '#ffffff'};
+background: ${(props) => props.checked ? '#008000' : '#ffffff'};
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 list-style: none;
@@ -116,6 +115,7 @@ font-size: 16px;
 line-height: 24px;
 display: flex;
 justify-content: space-between;
+gap: 20px;
 
 p{
     font-weight: 500;
